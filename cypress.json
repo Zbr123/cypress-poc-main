@@ -1,0 +1,8 @@
+{
+    "baseUrl": "https://web.mc.falsepill.com",
+    "testFiles": "**/*.feature",
+    "viewportWidth": 1280,
+    "viewportHeight": 720,
+    "defaultCommandTimeout":5000,
+    "chromeWebSecurity": false
+}
