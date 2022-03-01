@@ -38,7 +38,7 @@ export default class LoginPage {
 
     //Shipping locator
 
-    shippingButton="#headlessui-menu-item-25 > a:nth-child(3)";
+    shippingButton="#headlessui-menu-item-5 > a:nth-child(3)";
 
     addNewAdressButton=" main > div > button";
 
@@ -48,11 +48,22 @@ export default class LoginPage {
 
     cityField="#city";
 
-    stateField="#state";
+    stateField="div:nth-child(4) > div > div > div> button > svg";
+
+    stateFieldClickable="#downshift-0-item-0 > p"
 
     shippingZipCode="#zip";
 
     addAddressButton=".sc-fKgJPI.cxbltl.capsule.button.tablet\:w-8xl.w-full";
+
+
+
+
+
+    //chart
+
+    prescriptionButton="div:nth-child(4) > div > div.sc-jJMGnK.laKGqb > label > span ";
+
   
     // Create independent methods to do actions on elements
   
@@ -96,7 +107,7 @@ export default class LoginPage {
     //payment
 
     clickprofileButton(){
-      cy.wait(15000);
+      cy.wait(35000);
        
       cy.get(this.profileButton).click();
 
@@ -168,30 +179,36 @@ export default class LoginPage {
 
     clickAddNewAddress()
     {
-      cy.get(this.addAddressButton).click();
+      cy.get(this.addNewAdressButton).click();
     }
     
-    streetAddressField()
+    streetAddressFieldFunc()
     {
       cy.get(this.streetAdressField).type('R-521 abc society');
     }
  
-    suiteAppartment()
+    suiteAppartmentFunc()
     {
       cy.get(this.suiteAppartmentBuilding).type('5th floor');
     }
 
-    cityField()
+    cityFieldFunc()
     {
       cy.get(this.cityField).type('karachi');
+      cy.wait(3000);
     }
  
-    stateField()
+    stateFieldFunc()
     {
-      cy.get(this.stateField).type('xyz');
+      cy.get(this.stateField).click();
     }
 
-    shippingZipCode()
+    stateFieldselectFunc()
+    {
+      cy.get(this.stateFieldClickable).click();
+    }
+
+    shippingZipCodeFunc()
     {
       cy.get(this.shippingZipCode).type('5432');
     }
@@ -200,9 +217,6 @@ export default class LoginPage {
     {
       cy.get(this.addAddressButton).click();
     }
-
-
-
 
   
   }

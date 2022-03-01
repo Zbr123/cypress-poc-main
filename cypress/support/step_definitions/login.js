@@ -101,18 +101,19 @@ When('I fill card expiration cvv and zip code', () => {
 
     When('I click on shipping and add address', () => {
 
-      loginPage.shippingButton();
+      loginPage.clickShipping();
       loginPage.clickAddNewAddress();
  
       });
     
       When('I fill Add new address field', () => {
 
-        loginPage.streetAddressField();
-        loginPage.suiteAppartmentBuilding();
-        loginPage.cityField();
-        loginPage.stateField();
-        loginPage.shippingZipCode();
+        loginPage.streetAddressFieldFunc();
+        loginPage.suiteAppartmentFunc();
+        loginPage.cityFieldFunc();
+        loginPage.stateFieldFunc();
+        loginPage.stateFieldselectFunc();
+        loginPage.shippingZipCodeFunc();
         });
 
         Then('Add new shipping address', () => {
