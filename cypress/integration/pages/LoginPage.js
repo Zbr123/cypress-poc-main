@@ -50,11 +50,11 @@ export default class LoginPage {
 
     stateField="div:nth-child(4) > div > div > div> button > svg";
 
-    stateFieldClickable="#downshift-0-item-0 > p"
+    stateFieldClickable="#downshift-0-item-13 > p"
 
     shippingZipCode="#zip";
 
-    addAddressButton=".sc-fKgJPI.cxbltl.capsule.button.tablet\:w-8xl.w-full";
+    addAddressButton="div.flex.justify-end > button:nth-child(2)";
 
 
 
@@ -62,7 +62,14 @@ export default class LoginPage {
 
     //chart
 
-    prescriptionButton="div:nth-child(4) > div > div.sc-jJMGnK.laKGqb > label > span ";
+    prescriptionButton="#__next div:nth-child(3) > div > div.sc-jJMGnK";
+    addPrescribeMedicineButton="div.flex.justify-end > button";
+    proceedToCheckOutButton="div > div.mt-xl.w-full > button";
+    secondproccedToCheckOutButton="div.flex.justify-end > div > button";
+    saveandcontinue=".flex.justify-end.w-full button";
+    savePaymentsMethod="span > div.sc-bqGGPW.iPexDg > svg:nth-child(1)";
+    savePaymentcard="ul > li:nth-child(1)";
+    placeorder="div:nth-child(2) > div > div.flex.justify-end.w-full > button";
 
   
     // Create independent methods to do actions on elements
@@ -210,7 +217,7 @@ export default class LoginPage {
 
     shippingZipCodeFunc()
     {
-      cy.get(this.shippingZipCode).type('5432');
+      cy.get(this.shippingZipCode).type('30542');
     }
 
     clickNewAddressButton()
@@ -218,5 +225,53 @@ export default class LoginPage {
       cy.get(this.addAddressButton).click();
     }
 
+    // chart
+
+    clickprescribtionButton()
+    {
+      cy.wait(35000);
+      cy.get(this.prescriptionButton).click();
+    }
+
+    clickMedicineAddToChart()
+    {
+      cy.get(this.addPrescribeMedicineButton).click();
+    }
+
+    clickProccedToCheckOut()
+    {
+      cy.get(this.proceedToCheckOutButton).click();
+    }
+
+    clickSecondProccedToCheckOut()
+    {
+      cy.get(this.secondproccedToCheckOutButton).click();
+    }
   
+    clickSaveAndContinue()
+    {
+      cy.wait(10000);
+      cy.get(this.saveandcontinue).click();
+    }
+
+    clickPaymentMethoddropdown()
+    {
+      cy.get(this.savePaymentsMethod).click();
+    }
+
+    clickPaymentMethod()
+    {
+      cy.wait(10000);
+      cy.get(this.savePaymentcard).click();
+    }
+
+    clickPlaceOrder()
+    {
+      cy.get(this.placeorder).click();
+      cy.wait(5000);
+    }
+
+
+
+
   }

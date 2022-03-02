@@ -121,3 +121,17 @@ When('I fill card expiration cvv and zip code', () => {
           loginPage.clickAddNewAddress();
           
           });
+
+          When('Medicine add to chart', () => {
+
+            loginPage.clickprescribtionButton();
+            loginPage.clickMedicineAddToChart();
+            loginPage.clickProccedToCheckOut();
+            loginPage.clickSecondProccedToCheckOut();
+            loginPage.clickSaveAndContinue();
+            loginPage.clickPaymentMethoddropdown();
+            loginPage.clickPaymentMethod();
+            loginPage.clickPlaceOrder();
+            });
+
+            
