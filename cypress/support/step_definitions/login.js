@@ -4,7 +4,7 @@ import LoginPage from '../../integration/pages/LoginPage';
 
 import SecurePage from '../../integration/pages/SecurePage';
 
- 
+
 
 const loginPage = new LoginPage();
 
@@ -48,90 +48,4 @@ When('I click on Login button', () => {
 
 });
 
- 
 
-
-When('I click on DD button', () => {
-
-  loginPage.clickprofileButton();
-
-});
-
-When('I click on payment', () => {
-
-  loginPage.clickPaymentButton();
-
-});
-
-When('I click Add new card', () => {
-
-  loginPage.addNewCardButton();
-
-});
-
-When('I enter the card place holder name {string}', (Cardholdername) => {
-
-  loginPage.typeCardholdername(Cardholdername);
-  cy.wait(2000);
-  loginPage.pressTab();
-
-});
-
-When('I enter the card number {string}', (CardNumber) => {
-
-  cy.wait(2000);
-  loginPage.typeCardNumber(CardNumber);
-
-});
-
-When('I fill card expiration cvv and zip code', () => {
-
-  loginPage.typeCardExpiration;
-  loginPage.typeCardCVVNumber;
-  loginPage.typeCardZipCode;
-
-  });
-
-  When('Add new card for payment', () => {
-
-    loginPage.clickAdd();
-    
-    });
-  
-
-    When('I click on shipping and add address', () => {
-
-      loginPage.clickShipping();
-      loginPage.clickAddNewAddress();
- 
-      });
-    
-      When('I fill Add new address field', () => {
-
-        loginPage.streetAddressFieldFunc();
-        loginPage.suiteAppartmentFunc();
-        loginPage.cityFieldFunc();
-        loginPage.stateFieldFunc();
-        loginPage.stateFieldselectFunc();
-        loginPage.shippingZipCodeFunc();
-        });
-
-        Then('Add new shipping address', () => {
-
-          loginPage.clickAddNewAddress();
-          
-          });
-
-          When('Medicine add to chart', () => {
-
-            loginPage.clickprescribtionButton();
-            loginPage.clickMedicineAddToChart();
-            loginPage.clickProccedToCheckOut();
-            loginPage.clickSecondProccedToCheckOut();
-            loginPage.clickSaveAndContinue();
-            loginPage.clickPaymentMethoddropdown();
-            loginPage.clickPaymentMethod();
-            loginPage.clickPlaceOrder();
-            });
-
-            

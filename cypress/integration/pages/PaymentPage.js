@@ -43,21 +43,28 @@ export default class PaymentPage{
   
       }
   
-      typeCardholdername(Cardholdername){
-    
-        cy.get(this.cardHolderName).type(Cardholdername);
-      
-    
-      }
+      typeCardholdername(){
+
+        cy.get(this.cardHolderName).type('Zubair'+cardHolderName());
+        function cardHolderName() {
+            var text = "";
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        
+            for (var i = 0; i < 4; i++)
+              text += possible.charAt(Math.floor(Math.random() * possible.length));
+        
+            return text;
+          }
+       }
     
   
-      typeCardNumber(){
-  
+      typeCardNumber()
+      {
         cy.wait(10000)
         cy.iframe('[title="Secure card number input frame"]')
         .as('iframe')
         .find('[name="cardnumber"]')
-        .type('42424242424242')
+        .type('4242424242424242')
         }
 
   
@@ -84,7 +91,7 @@ export default class PaymentPage{
       typeCardZipCode()
       {
     
-        cy.get(this.cardZipCode).type('54321');
+        cy.get(this.cardZipCode).type('07090');
     
       }
   

@@ -32,9 +32,9 @@ When('I click on payment', () => {
   
   });
   
-  When('I enter the card place holder name {string}', (Cardholdername) => {
+  When('I enter the card place holder name', () => {
   
-    paymentPage.typeCardholdername(Cardholdername);
+    paymentPage.typeCardholdername();
     cy.wait(2000);
     
   

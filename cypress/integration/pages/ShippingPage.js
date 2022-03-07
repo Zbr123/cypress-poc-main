@@ -11,7 +11,7 @@ export default class Shippingpage{
 
     stateField="div:nth-child(4) > div > div > div> button > svg";
 
-    stateFieldClickable="#downshift-0-item-13 > p"
+    stateFieldClickable="#downshift-0-item-33 > p"
 
     shippingZipCode="#zip";
 
@@ -40,12 +40,21 @@ export default class Shippingpage{
     
     streetAddressFieldFunc()
     {
-      cy.get(this.streetAdressField).type('R-521 abc society');
+      cy.get(this.streetAdressField).type('140 Central Ave');
     }
  
     suiteAppartmentFunc()
     {
-      cy.get(this.suiteAppartmentBuilding).type('5th floor');
+      cy.get(this.suiteAppartmentBuilding).type(appartment()+', New Jersey');
+      function appartment() {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    
+        for (var i = 0; i < 4; i++)
+          text += possible.charAt(Math.floor(Math.random() * possible.length));
+    
+        return text;
+      }
     }
 
     cityFieldFunc()
@@ -66,7 +75,7 @@ export default class Shippingpage{
 
     shippingZipCodeFunc()
     {
-      cy.get(this.shippingZipCode).type('30542');
+      cy.get(this.shippingZipCode).type('07090');
     }
 
     clickConfirmAddressButton()
